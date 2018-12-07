@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import AllQuotes from '../views/AllQuotes';
-import CharacterQuotes from '../views/CharacterQuotes';
-import BookQuotes from '../views/BookQuotes';
+import AllQuote from '../views/AllQuote';
+import CharacterQuote from '../views/CharacterQuote';
+import BookQuote from '../views/BookQuote';
 
 Vue.use(Router);
 
@@ -11,18 +11,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'AllQuotes',
-      component: AllQuotes,
+      name: 'AllQuote',
+      component: AllQuote,
     },
     {
       path: '/personnage',
-      name: 'CharacterQuotes',
-      component: CharacterQuotes,
+      name: 'CharacterQuote',
+      component: CharacterQuote,
     },
     {
       path: '/livre',
-      name: 'BookQuotes',
-      component: BookQuotes,
+      name: 'BookQuote',
+      component: BookQuote,
     }
   ]
 });

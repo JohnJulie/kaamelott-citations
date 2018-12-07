@@ -41,6 +41,11 @@
     font-size: x-large;
     .kaamelott-header--link {
       margin-left: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      &:hover {
+        color: beige;
+      }
     }
   }
 </style>
