@@ -32,6 +32,6 @@ export default {
     margin: 0;
     background-color: #000000;
     color: #ffffff;
-    font-family: 'Folkard';
+    font-family: Papyrus;
   }
 </style>

@@ -4,7 +4,7 @@
       "{{ quote.text }}"
     </div>
     <div class="quote-details">
-      {{ quote.details }}
+      {{ formattedInfos }}
     </div>
   </div>
 </template>
@@ -14,19 +14,18 @@
 
   export default {
     name: 'TheRandomQuote',
-    data () {
-      return {
-        quote: {
-          text: '',
-          details: 'Je teste le detail de la quote'
-        }
+    props: ['quote'],
+    computed: {
+      formattedInfos: function () {
+        const infos = this.quote.details;
+        return 'De ' + infos.personnage + ', ' + infos.saison + ', Episode ' + infos.episode;
       }
     },
     mounted () {
       randomQuoteService.getRandomQuote().then(
         quote => {
           this.quote.text = quote.citation;
-          console.log('data:', quote)
+          this.quote.details = quote.infos;
         }
       )
     }
@@ -35,7 +34,7 @@
 
 <style lang="scss">
   .random-quote {
-    height: 80vh;
+    height: calc(80vh - 100px);
     margin: 0 15%;
 
     display: flex;
@@ -44,7 +43,7 @@
     align-items: center;
 
     .quote {
-      font-size: 3em;
+      font-size: 2em;
     }
 
     .quote-details {
