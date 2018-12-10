@@ -19,5 +19,15 @@ export default {
       .catch((error) => {
         console.log('error on getCharacterQuote:', error);
       });
+  },
+
+  getBookQuote(book) {
+    return Vue.axios.get('https://kaamelott.chaudie.re/api/random/livre/' + book)
+      .then(response => {
+        return response.data.citation;
+      })
+      .catch((error) => {
+        console.log('error on getBookQuote:', error);
+      });
   }
 }

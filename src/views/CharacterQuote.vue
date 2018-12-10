@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-page">
     <the-random-quote :quote="quote"></the-random-quote>
     <the-footer-list-character @setCharacter="setCharacter"></the-footer-list-character>
   </div>
@@ -27,7 +27,6 @@
     },
     methods: {
       setCharacter: function (character) {
-        console.log("selected character:", character.id);
         randomQuoteService.getCharacterQuote(character.name).then(
           quote => {
             this.quote.text = quote.citation;
@@ -35,6 +34,9 @@
           }
         );
       }
+    },
+    mounted () {
+      this.setCharacter(this.characters[0]);
     }
   }
 </script>

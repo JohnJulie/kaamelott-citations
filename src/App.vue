@@ -21,17 +21,14 @@ export default {
 </script>
 
 <style lang="scss">
-  @font-face {
-    font-family: 'Folkard';
-    src: url('./assets/fonts/folkard.ttf');
-    font-weight: normal;
-    font-style: normal;
-  }
   html, body, #app {
     height: 100vh;
     margin: 0;
     background-color: #000000;
     color: #ffffff;
     font-family: Papyrus;
+  }
+  .main-page {
+    height: calc(100vh - 100px);
   }
 </style>

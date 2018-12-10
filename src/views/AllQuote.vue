@@ -1,5 +1,7 @@
 <template>
-  <the-random-quote :quote="quote"></the-random-quote>
+  <div class="main-page">
+    <the-random-quote :quote="quote"></the-random-quote>
+  </div>
 </template>
 
 <script>

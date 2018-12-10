@@ -10,8 +10,6 @@
 </template>
 
 <script>
-  import randomQuoteService from '../api/randomQuoteService';
-
   export default {
     name: 'TheRandomQuote',
     props: ['quote'],
@@ -20,21 +18,13 @@
         const infos = this.quote.details;
         return 'De ' + infos.personnage + ', ' + infos.saison + ', Episode ' + infos.episode;
       }
-    },
-    mounted () {
-      randomQuoteService.getRandomQuote().then(
-        quote => {
-          this.quote.text = quote.citation;
-          this.quote.details = quote.infos;
-        }
-      )
     }
   }
 </script>
 
 <style lang="scss">
   .random-quote {
-    height: calc(80vh - 100px);
+    height: 70vh;
     margin: 0 15%;
 
     display: flex;

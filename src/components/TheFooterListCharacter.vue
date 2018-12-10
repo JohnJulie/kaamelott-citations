@@ -39,7 +39,7 @@
   @import '../../node_modules/slick-carousel/slick/slick.css';
 
   .character-list {
-    height: calc(20vh - 100px);
+    height: 15vh;
   }
 
   .slick-slider {
